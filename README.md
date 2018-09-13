@@ -102,7 +102,7 @@ WHERE t1.id >= t2.id ORDER BY t1.id LIMIT 1;
 
 Batch Truncate Tables
 
-SELECT CONCAT( 'truncate table ', table_name, ';' )  FROM information_schema.tables WHERE table_name LIKE 'car_base_conf%';
+SELECT CONCAT( 'truncate table ', table_name, ';' )  FROM information_schema.tables WHERE table_name LIKE 'prefix%';
 
 存储过程
 
