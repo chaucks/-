@@ -269,9 +269,7 @@ update table_name
 WHERE
 
 <foreach collection="collection" index="index" item="item" separator="or">
-
     id = #{item.id}
-
 </foreach>
 	
 </update>
