@@ -93,7 +93,12 @@ taskkill /T /F /PID 3308    // 杀死进程
 
 
 
-Mysql 
+Mysql
+
+随机查询
+
+SELECT t1.* FROM `table_name` t1, ( SELECT ROUND( RAND() * (MAX(id) - MIN(id)) + MIN(id) ) id FROM `table_name` ) t2
+WHERE t1.id >= t2.id ORDER BY t1.id LIMIT 1;
 
 Batch Truncate Tables
 
