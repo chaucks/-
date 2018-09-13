@@ -1,28 +1,28 @@
 # -
-知识库
+# 知识库
 
-Java
+## Java
 
-成员方法也是共享的，为什么就不会出现问题呢？
+### 成员方法也是共享的，为什么就不会出现问题呢？
 
 先回答你这个问题：
 java 里，每个线程都有自己独享的空间，也就是栈内存。线程在调用方法的时候，会创建一个栈帧。也就是说调用一个方法的时候，也就是一个栈帧的入栈过程，该方法执行完毕，栈帧也就出栈了。
 换句话讲，成员方法对于每个线程事实上是私有的，而不是你表面看上去的那样是 "共享" 的。
 
-那么为什么成员变量会出问题呢？
+### 那么为什么成员变量会出问题呢？
 
 如你所知道的，每个新建对象都存放在堆中，每个持有该对象引用的线程，都可以访问到它(只要你有那个权限)。
 这也就是说，成员变量对于每个线程，事实上是共享的。
 
 
 
-EcmaScript JavaScript or JQuery
+## EcmaScript JavaScript or JQuery
 
-获取图片的真实宽度
+### 获取图片的真实宽度
 
 Image.naturalWidth
 
-传数组参数
+### 传数组参数
 
 $.ajax({
 
@@ -48,7 +48,7 @@ $.ajax({
 	
 });
 
-class多选
+### class多选
 
 $(".class1 .class2") 选择class1元素下class2的元素（中间有空格）
 
@@ -64,9 +64,9 @@ $(".class1,.class2,.class3,.class4")
 
 
 
-Linux
+## Linux
 
-查杀tomcat进程
+### 查杀tomcat进程
 
 ps -ef |grep tomcat
 
@@ -74,9 +74,9 @@ kill -9 5144
 
 
 
-Windows 
+## Windows 
 
-端口杀进程
+### 端口杀进程
 
 netstat -ano |findstr 8080
 
@@ -84,7 +84,7 @@ tasklist|findstr 3308    // 查询哪个程序占用
  
 taskkill /T /F /PID 3308    // 杀死进程
 
-命令行分区
+### 命令行分区
 
 首先，用Windows安装盘启动电脑，到下面这个界面，按Shift+F10，就会启动具有管理员权限的ＣＭＤ：
 
@@ -112,18 +112,18 @@ taskkill /T /F /PID 3308    // 杀死进程
 
 
 
-Mysql
+## Mysql
 
-随机查询
+### 随机查询
 
 SELECT t1.* FROM `table_name` t1, ( SELECT ROUND( RAND() * (MAX(id) - MIN(id)) + MIN(id) ) id FROM `table_name` ) t2
 WHERE t1.id >= t2.id ORDER BY t1.id LIMIT 1;
 
-Batch Truncate Tables
+### Batch Truncate Tables
 
 SELECT CONCAT( 'truncate table ', table_name, ';' )  FROM information_schema.tables WHERE table_name LIKE 'prefix%';
 
-存储过程
+### 存储过程
 
 SHOW PROCEDURE STATUS LIKE '%%';
 
@@ -309,9 +309,9 @@ CALL proc_distribution_sales_stat_detail();
 
 
 
-Ubuntu
+## Ubuntu
 
-分区大小 320g硬盘
+### 分区大小 320g硬盘
 
 boot 200mb
 
@@ -332,9 +332,9 @@ var 20g
 
 
 
-Mybatis
+## Mybatis
 
-Batch Update
+### Batch Update
 
 <update id="updateBatch" parameterType="collection">
 	
