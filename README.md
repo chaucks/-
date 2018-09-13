@@ -59,3 +59,65 @@ END;
 COMMIT;
 
 CALL p();
+
+DROP PROCEDURE IF EXISTS proc_distribution_sales_stat_detail;
+
+DELIMITER //
+
+CREATE PROCEDURE proc_distribution_sales_stat_detail(IN pkid VARCHAR(50))
+
+BEGIN
+
+INSERT INTO distribution_sales_stat_detail (
+	PKID,
+	
+	ORDER_ID,
+	
+	ACTION_ID,
+	
+	DIS_ID,
+	
+	SALE_PRICES,
+	
+	`YEAR`,
+	
+	`MONTH`,
+	
+	STAT_TIME
+)
+
+SELECT
+	pkid PKID, 
+	
+	sog.order_id ORDER_ID, 
+	
+	sog.action_id ACTION_ID, 
+	
+	so.order_user DIS_ID, 
+	
+	sog.sale_price SALE_PRICES, 
+	
+	DATE_FORMAT(so.op_time, '%Y') `YEAR`, 
+	
+	DATE_FORMAT(so.op_time, '%m') `MONTH`,
+	
+	NOW() STAT_TIME
+	
+FROM shop_order_goods sog
+
+JOIN shop_order so
+
+ON so.order_id=sog.order_id
+
+AND sog.PAY_STATUS=3
+
+AND DATE_FORMAT(so.op_time, '%Y-%m')=DATE_FORMAT(NOW(), '%Y-%m')
+
+ORDER BY DIS_ID;
+
+END;
+//
+
+COMMIT;
+
+CALL proc_distribution_sales_stat_detail();
