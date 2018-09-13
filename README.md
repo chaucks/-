@@ -215,6 +215,29 @@ CALL proc_distribution_sales_stat_detail();
 
 
 
+Ubuntu
+
+分区大小 320g硬盘
+
+boot 200mb
+
+swap 4g
+
+root 80g
+
+usr 60g
+
+usr/local 60g
+
+tmp 10g
+
+srv 10g
+
+var 20g
+
+
+
+
 Mybatis
 
 Batch Update
