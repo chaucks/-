@@ -1,7 +1,19 @@
 # -
 知识库
 
-win 端口杀进程
+linux
+
+查杀tomcat进程
+
+ps -ef |grep tomcat
+
+kill -9 5144
+
+
+
+win 
+
+端口杀进程
 
 netstat -ano |findstr 8080
 
