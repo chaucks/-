@@ -1,7 +1,23 @@
 # -
 知识库
 
-mysql 存储过程
+win 端口杀进程
+
+netstat -ano |findstr 8080
+
+tasklist|findstr 3308    // 查询哪个程序占用
+ 
+taskkill /T /F /PID 3308    // 杀死进程
+
+
+
+mysql 
+
+Batch Truncate Tables
+
+SELECT CONCAT( 'truncate table ', table_name, ';' )  FROM information_schema.tables WHERE table_name LIKE 'car_base_conf%';
+
+存储过程
 
 SHOW PROCEDURE STATUS LIKE '%%';
 
