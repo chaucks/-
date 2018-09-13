@@ -16,7 +16,11 @@ java 里，每个线程都有自己独享的空间，也就是栈内存。线程
 
 
 
-Javascript or JQuery
+EcmaScript JavaScript or JQuery
+
+获取图片的真实宽度
+
+Image.naturalWidth
 
 传数组参数
 
