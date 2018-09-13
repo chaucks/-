@@ -1,7 +1,7 @@
 # -
 知识库
 
-linux
+Linux
 
 查杀tomcat进程
 
@@ -11,7 +11,7 @@ kill -9 5144
 
 
 
-win 
+Windows 
 
 端口杀进程
 
@@ -23,7 +23,7 @@ taskkill /T /F /PID 3308    // 杀死进程
 
 
 
-mysql 
+Mysql 
 
 Batch Truncate Tables
 
@@ -215,40 +215,40 @@ CALL proc_distribution_sales_stat_detail();
 
 
 
-mybatis
+Mybatis
 
 Batch Update
 
 <update id="updateBatch" parameterType="collection">
 	
-	update table_name
-	
-	<trim prefix="set" suffixOverrides=",">
-	
-	    <trim prefix="memberId=CASE" suffix="END,">
-	    
-		<foreach collection="collection" index="index" item="item">
-		
-		    <if test="null != item.memberId">
-		    
-			WHEN id = #{item.id}
-			
-			THEN #{item.memberId}
-			
-		    </if>
-		    
-		</foreach>
-		
-	    </trim>
-	    
-	</trim>
-	
-	WHERE
-	
-	<foreach collection="collection" index="index" item="item" separator="or">
-	
-	    id = #{item.id}
-	    
+update table_name
+
+<trim prefix="set" suffixOverrides=",">
+
+    <trim prefix="memberId=CASE" suffix="END,">
+
+	<foreach collection="collection" index="index" item="item">
+
+	    <if test="null != item.memberId">
+
+		WHEN id = #{item.id}
+
+		THEN #{item.memberId}
+
+	    </if>
+
 	</foreach>
+
+    </trim>
+
+</trim>
+
+WHERE
+
+<foreach collection="collection" index="index" item="item" separator="or">
+
+    id = #{item.id}
+
+</foreach>
 	
 </update>
