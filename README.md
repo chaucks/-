@@ -244,32 +244,34 @@ Batch Update
 
 <update id="updateBatch" parameterType="collection">
 	
-update table_name
+	update table_name
 
-<trim prefix="set" suffixOverrides=",">
+	<trim prefix="set" suffixOverrides=",">
 
-    <trim prefix="memberId=CASE" suffix="END,">
+	    <trim prefix="memberId=CASE" suffix="END,">
 
-	<foreach collection="collection" index="index" item="item">
+		<foreach collection="collection" index="index" item="item">
 
-	    <if test="null != item.memberId">
+		    <if test="null != item.memberId">
 
-		WHEN id = #{item.id}
+			WHEN id = #{item.id}
 
-		THEN #{item.memberId}
+			THEN #{item.memberId}
 
-	    </if>
+		    </if>
+
+		</foreach>
+
+	    </trim>
+
+	</trim>
+
+	WHERE
+
+	<foreach collection="collection" index="index" item="item" separator="or">
+
+	    id = #{item.id}
 
 	</foreach>
-
-    </trim>
-
-</trim>
-
-WHERE
-
-<foreach collection="collection" index="index" item="item" separator="or">
-    id = #{item.id}
-</foreach>
 	
 </update>
