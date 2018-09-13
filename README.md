@@ -1,6 +1,36 @@
 # -
 知识库
 
+Javascript
+
+传数组参数
+
+$.ajax({
+
+	url: '',
+	
+	data: {key: ['1', '2', '3']},
+	
+	// traditional true 支持传递数组参数 重要
+	
+	traditional: true,
+	
+	async: false,
+	
+	type: 'post',
+	
+	success: function (json) {
+	
+	},
+	
+	error: function () {
+	
+	}
+	
+});
+
+
+
 Linux
 
 查杀tomcat进程
