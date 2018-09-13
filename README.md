@@ -1,7 +1,7 @@
 # -
 知识库
 
-Javascript
+Javascript or JQuery
 
 传数组参数
 
@@ -28,6 +28,20 @@ $.ajax({
 	}
 	
 });
+
+class多选
+
+$(".class1 .class2") 选择class1元素下class2的元素（中间有空格）
+
+$(".class1.class2") 选择同时含有class1和class2的元素（中间没有空格）
+
+$(".class1,.class2") 选择class1或者class2的元素（中间有逗号）
+
+$(".class1,.class2,.class3,...")
+
+$(".class1&.class2")选择同时含有class1和class2的元素
+
+$(".class1,.class2,.class3,.class4") 
 
 
 
