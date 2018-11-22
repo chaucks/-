@@ -375,3 +375,22 @@ var 20g
 	</foreach>
 	
 </update>
+
+<insert id="insertSelective">
+	insert into ${table}
+	<trim prefix="(" suffix=")" suffixOverrides=",">
+	    <foreach collection="map" index="key" item="value">
+		<if test="key != null and null != value">
+		    ${key},
+		</if>
+	    </foreach>
+	</trim>
+	<trim prefix="values (" suffix=")" suffixOverrides=",">
+	    <foreach collection="map" index="key" item="value">
+		<if test="key != null and null != value">
+		    #{value},
+		</if>
+	    </foreach>
+	</trim>
+</insert>
+
