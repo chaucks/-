@@ -377,6 +377,7 @@ var 20g
 </update>
 
 <insert id="insertSelective">
+	
 	insert into ${table}
 	<trim prefix="(" suffix=")" suffixOverrides=",">
 	    <foreach collection="map" index="key" item="value">
@@ -392,5 +393,6 @@ var 20g
 		</if>
 	    </foreach>
 	</trim>
+	
 </insert>
 
