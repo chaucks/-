@@ -25,7 +25,13 @@ java 里，每个线程都有自己独享的空间，也就是栈内存。线程
 ## Nginx
 
 #### Nginx指定配置文件启动
+
 start nginx.exe -c conf/default.conf
+
+#### Nginx重新加载配置文件
+
+nginx.exe -s reload
+
 
 
 
