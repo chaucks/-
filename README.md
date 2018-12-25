@@ -30,7 +30,7 @@ Comparator.comparing(j -> j.getString("USERID"));
 
 #### Nginx指定配置文件启动并验证配置（-t）
 
-start nginx.exe -t -c conf/default.conf
+start nginx.exe -c conf/default.conf
 
 #### Nginx重新加载配置文件
 
