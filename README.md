@@ -140,6 +140,12 @@ $(".class1,.class2,.class3,.class4")
 
 ## Mysql
 
+### 外键约束怎么清空表
+
+SET FOREIGN_KEY_CHECKS=0;
+truncate TABLE xxx;
+SET FOREIGN_KEY_CHECKS=1;
+
 #### 随机查询
 
 SELECT t1.* FROM `table_name` t1, ( SELECT ROUND( RAND() * (MAX(id) - MIN(id)) + MIN(id) ) id FROM `table_name` ) t2
