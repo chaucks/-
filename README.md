@@ -140,10 +140,12 @@ $(".class1,.class2,.class3,.class4")
 
 ## Mysql
 
-### 外键约束怎么清空表
+#### 外键约束怎么清空表
 
 1.SET FOREIGN_KEY_CHECKS=0;
+
 2.truncate TABLE xxx;
+
 3.SET FOREIGN_KEY_CHECKS=1;
 
 #### 随机查询
