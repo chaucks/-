@@ -140,6 +140,23 @@ $(".class1,.class2,.class3,.class4")
 
 ## Mysql
 
+#### 事务死锁处理
+
+1.
+-- 检索正在运行的事务
+SELECT * FROM information_schema.INNODB_TRX;
+
+2.
+-- 找到 trx_state=LOCK_WAIT的事务行
+-- 执行 KILL trx_mysql_thread_id
+-- 如：trx_mysql_thread_id=10468
+-- KILL 10468
+KILL 10468;
+
+3.
+-- 查看所有进程列表
+SHOW PROCESSLIST;
+
 #### 外键约束怎么清空表
 
 1.SET FOREIGN_KEY_CHECKS=0;
