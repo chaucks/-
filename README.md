@@ -31,6 +31,7 @@ Comparator.comparing(j -> j.getString("USERID"));
 #### Zookeeper start stop
 
 bin/zkServer.sh start conf/zoo1.cfg
+
 bin/zkServer.sh start conf/zoo2.cfg
 
 
