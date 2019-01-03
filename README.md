@@ -22,7 +22,11 @@ Comparator.comparing(j -> j.getString("USERID"));
 
 ## Apollo MQ
 
-#### croker command
+#### Broker command
+
+add ${APOLLO_HOME}/bin to env path
+
+apollo create broker
 
 "D:\apache-apollo-1.7.1-broker\broker\bin\apollo-broker" run
 
