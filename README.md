@@ -39,7 +39,7 @@ apollo create broker
 
 ## Nginx
 
-#### Nginx指定配置文件启动并验证配置（-t）
+#### Nginx指定配置文件启动
 
 start nginx.exe -c conf/default.conf
 
