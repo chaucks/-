@@ -19,20 +19,16 @@ Comparator.comparing(j -> j.getString("USERID"));
 
 
 
-## Regex
 
-#### 年月日验证
+## Apollo MQ
 
+#### croker command
 
+"D:\apache-apollo-1.7.1-broker\broker\bin\apollo-broker" run
 
+"D:\apache-apollo-1.7.1-broker\broker\bin\apollo-broker-service" install
 
-## Zookeeper
-
-#### Zookeeper start stop
-
-bin/zkServer.sh start conf/zoo1.cfg
-
-bin/zkServer.sh start conf/zoo2.cfg
+"D:\apache-apollo-1.7.1-broker\broker\bin\apollo-broker-service" start
 
 
 
