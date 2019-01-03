@@ -26,6 +26,16 @@ Comparator.comparing(j -> j.getString("USERID"));
 
 
 
+## Zookeeper
+
+#### Zookeeper start stop
+
+bin/zkServer.sh start conf/zoo1.cfg
+bin/zkServer.sh start conf/zoo2.cfg
+
+
+
+
 ## Nginx
 
 #### Nginx指定配置文件启动并验证配置（-t）
