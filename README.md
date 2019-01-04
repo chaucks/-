@@ -50,6 +50,15 @@ nginx.exe -s reload
 
 
 
+## MongoDB
+
+#### 安装服务
+
+mongod --config D:\mongodb\mongo.config --install --serviceName "MongoDB"
+
+
+
+
 ## Linux
 
 #### 查杀tomcat进程
