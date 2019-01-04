@@ -28,6 +28,8 @@ add ${APOLLO_HOME}/bin to env path
 
 apollo create broker
 
+your broker folder>
+
 "D:\apache-apollo-1.7.1-broker\broker\bin\apollo-broker" run
 
 "D:\apache-apollo-1.7.1-broker\broker\bin\apollo-broker-service" install
