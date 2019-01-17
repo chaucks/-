@@ -200,32 +200,43 @@ SELECT CONCAT( 'truncate table ', table_name, ';' )  FROM information_schema.tab
 
 
 
-## Ubuntu
-
-#### 分区大小 320g硬盘
-
-boot 200mb
-
-swap 4g
-
-root 80g
-
-usr 60g
-
-usr/local 60g
-
-tmp 10g
-
-srv 10g
-
-var 20g
-
-
-
-
 ## Mybatis
 
 #### Batch Update
+
+<insert id="insertSelective">
+	
+	insert into ${table}
+	<trim prefix="(" suffix=")" suffixOverrides=",">
+	    <foreach collection="map" index="key" item="value">
+		<if test="null != key and null != value">
+		    ${key},
+		</if>
+	    </foreach>
+	</trim>
+	<trim prefix="values (" suffix=")" suffixOverrides=",">
+	    <foreach collection="map" index="key" item="value">
+		<if test="null != key and null != value">
+		    #{value},
+		</if>
+	    </foreach>
+	</trim>
+	
+</insert>
+
+<update id="updateSelective">
+	
+        update ${table}
+        <trim prefix="SET " suffixOverrides=",">
+            <foreach collection="map" index="key" item="value">
+                <if test="null != key and null != value">
+                    ${key} = #{value},
+                </if>
+            </foreach>
+        </trim>
+        WHERE ID = #{ID}
+	
+</update>
 
 <update id="updateBatch" parameterType="collection">
 	
@@ -261,39 +272,29 @@ var 20g
 	
 </update>
 
-<insert id="insertSelective">
-	
-	insert into ${table}
-	<trim prefix="(" suffix=")" suffixOverrides=",">
-	    <foreach collection="map" index="key" item="value">
-		<if test="null != key and null != value">
-		    ${key},
-		</if>
-	    </foreach>
-	</trim>
-	<trim prefix="values (" suffix=")" suffixOverrides=",">
-	    <foreach collection="map" index="key" item="value">
-		<if test="null != key and null != value">
-		    #{value},
-		</if>
-	    </foreach>
-	</trim>
-	
-</insert>
 
-<update id="updateSelective">
-	
-        update ${table}
-        <trim prefix="SET " suffixOverrides=",">
-            <foreach collection="map" index="key" item="value">
-                <if test="null != key and null != value">
-                    ${key} = #{value},
-                </if>
-            </foreach>
-        </trim>
-        WHERE ID = #{ID}
-	
-</update>
+
+
+
+## Ubuntu
+
+#### 分区大小 320g硬盘
+
+boot 200mb
+
+swap 4g
+
+root 80g
+
+usr 60g
+
+usr/local 60g
+
+tmp 10g
+
+srv 10g
+
+var 20g
 
 
 
