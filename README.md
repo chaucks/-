@@ -449,18 +449,32 @@ var 20g
 	insert into ${table}
 	<trim prefix="(" suffix=")" suffixOverrides=",">
 	    <foreach collection="map" index="key" item="value">
-		<if test="key != null and null != value">
+		<if test="null != key and null != value">
 		    ${key},
 		</if>
 	    </foreach>
 	</trim>
 	<trim prefix="values (" suffix=")" suffixOverrides=",">
 	    <foreach collection="map" index="key" item="value">
-		<if test="key != null and null != value">
+		<if test="null != key and null != value">
 		    #{value},
 		</if>
 	    </foreach>
 	</trim>
 	
 </insert>
+
+<update id="updateSelective">
+	
+        update ${table}
+        <trim prefix="SET " suffixOverrides=",">
+            <foreach collection="map" index="key" item="value">
+                <if test="null != key and null != value">
+                    ${key} = #{value},
+                </if>
+            </foreach>
+        </trim>
+        WHERE ID = #{ID}
+	
+</update>
 
