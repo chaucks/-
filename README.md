@@ -19,6 +19,20 @@ Comparator.comparing(j -> j.getString("USERID"));
 
 
 
+## Spring
+
+#### 定时任务 
+
+@Scheduled(cron = "0 0 * * * *")
+
+1.方法不能有参数
+
+2.方法不能有返回值
+
+3.类（class）中不能包含其他任何带注解的方法
+
+
+
 
 ## Apollo MQ
 
