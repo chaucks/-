@@ -129,6 +129,29 @@ taskkill /T /F /PID 3308
 
 
 
+## Maven
+
+#### Maven <parent>
+
+parent依赖 子pom找不到父pom的jar 添加relativePath标签 意思是从子pom的工程父级目录查找父pom文件
+
+reimport jar 如果还有问题试着在报错的文件重新import class
+
+<parent>
+	
+        <groupId>xxx.xxx</groupId>
+	
+        <artifactId>xxx</artifactId>
+        
+	<version>x.x.x</version>
+        
+	<relativePath/>
+	
+</parent>
+
+
+
+
 ## EcmaScript JavaScript or JQuery
 
 #### 获取图片的真实宽度
