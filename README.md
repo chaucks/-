@@ -92,9 +92,13 @@ kill -9 5144
 
 netstat -ano |findstr 8080
 
-tasklist|findstr 3308    // 查询哪个程序占用
+// 查询哪个程序占用
+
+tasklist|findstr 3308
  
-taskkill /T /F /PID 3308    // 杀死进程
+// 杀死进程
+
+taskkill /T /F /PID 3308
 
 #### 命令行分区
 
