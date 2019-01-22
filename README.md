@@ -137,7 +137,7 @@ parent依赖 子pom找不到父pom的jar 添加relativePath标签 意思是从�
 
 reimport jar 如果还有问题试着在报错的文件重新import class
 
-<parent>
+	<parent>
 	
         <groupId>xxx.xxx</groupId>
 	
@@ -147,7 +147,7 @@ reimport jar 如果还有问题试着在报错的文件重新import class
         
 	<relativePath/>
 	
-</parent>
+	</parent>
 
 
 
