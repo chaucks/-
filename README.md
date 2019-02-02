@@ -19,6 +19,26 @@ Comparator.comparing(j -> j.getString("USERID"));
 
 
 
+
+## Vertx
+
+#### common-logging slf4j
+
+// common-logging -> log4j2
+	
+System.setProperty("vertx.logger-delegate-factory-class-name", "io.vertx.core.logging.Log4j2LogDelegateFactory");
+
+// common-logging -> log4j
+
+System.setProperty("vertx.logger-delegate-factory-class-name", "io.vertx.core.logging.Log4jLogDelegateFactory");
+
+// slf4j -> logback
+
+System.setProperty("vertx.logger-delegate-factory-class-name", "io.vertx.core.logging.SLF4JLogDelegateFactory");
+
+
+
+
 ## Spring
 
 #### 定时任务 
