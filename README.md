@@ -1,5 +1,19 @@
 # 知识库
 
+
+## IDEA
+
+#### Tomcat 控制台乱码
+
+idea.exe.vmoptions
+
+idea64.exe.vmoptions
+
+-Dfile.encoding=UTF-8
+
+
+
+
 ## Java
 
 #### 成员方法也是共享的，为什么就不会出现问题呢？
