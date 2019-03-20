@@ -272,6 +272,10 @@ WHERE t1.id >= t2.id ORDER BY t1.id LIMIT 1;
 
 SELECT CONCAT( 'truncate table ', table_name, ';' )  FROM information_schema.tables WHERE table_name LIKE 'prefix%';
 
+#### 查询表名
+
+SELECT table_name FROM information_schema.tables WHERE table_schema='当前数据库';
+
 
 
 
