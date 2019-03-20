@@ -274,7 +274,7 @@ SELECT CONCAT( 'truncate table ', table_name, ';' )  FROM information_schema.tab
 
 #### 查询表名
 
-SELECT table_name FROM information_schema.tables WHERE table_schema='当前数据库';
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'schema_name' AND table_name LIKE '%%';
 
 
 
