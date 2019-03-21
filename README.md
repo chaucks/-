@@ -241,9 +241,9 @@ $(".class1,.class2,.class3,.class4")
 
 跨域实现的过程大致如下:
 
-从：http://www.a.com/some.html a服务的某页面 
+从：a服务的某页面（ http://www.a.com/some.html ）
 
-向：http://www.b.com b服务发起Ajax请求
+向：b服务（ http://www.b.com ）发起Ajax请求
 
 Ajax请求地址为： http://www.b.com/some.html
 
