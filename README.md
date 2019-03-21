@@ -235,6 +235,20 @@ $(".class1,.class2,.class3,.class4")
 
 
 
+## Ajax 跨域但是 Http code 200
+
+#### Access to XMLHttpRequest at 'http://www.b.com/some.html' from origin 'http://www.a.com/some.html' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+跨域实现的过程大致如下:
+
+从：http://www.a.com/some.html 发起Ajax请求： http://www.b.com/some.html
+
+如果b服务器返回header：Access-Control-Allow-Origin: http://www.a.com 则来自 http://www.a.com/some.html 的跨域请求就会被通过
+
+
+
+
+
 ## Mysql
 
 #### 事务死锁处理
