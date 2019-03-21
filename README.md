@@ -241,7 +241,11 @@ $(".class1,.class2,.class3,.class4")
 
 跨域实现的过程大致如下:
 
-从：http://www.a.com/some.html 发起Ajax请求： http://www.b.com/some.html
+从：http://www.a.com/some.html a服务的某页面 
+
+向：http://www.b.com b服务发起Ajax请求
+
+Ajax请求地址为： http://www.b.com/some.html
 
 如果b服务器返回header：Access-Control-Allow-Origin: http://www.a.com 则来自 http://www.a.com/some.html 的跨域请求就会被通过
 
