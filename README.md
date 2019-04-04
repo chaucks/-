@@ -581,3 +581,20 @@ COMMIT;
 CALL proc_distribution_sales_stat_detail();
 
 
+
+
+#### DNS
+
+CNNIC(中国互联网络信息中心）公共云DNS
+
+首选：1.2.4.8
+
+备用：210.2.4.8
+
+阿里DNS
+
+223.5.5.5
+
+223.6.6.6
+
+
