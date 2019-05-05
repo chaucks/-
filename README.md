@@ -311,6 +311,10 @@ SELECT CONCAT( 'truncate table ', table_name, ';' )  FROM information_schema.tab
 
 SELECT table_name FROM information_schema.tables WHERE table_schema = 'schema_name' AND table_name LIKE '%%';
 
+#### 查询列名
+
+SELECT column_name FROM information_schema.columns WHERE TABLE_SCHEMA = (SELECT DATABASE()) AND TABLE_NAME = #{table};
+
 
 
 
