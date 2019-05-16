@@ -109,6 +109,15 @@ mongod --config D:\mongodb\mongo.config --install --serviceName "MongoDB"
 
 
 
+## ELK
+
+#### 启动Elasticsearch
+
+./bin/elasticsearch
+
+
+
+
 ## Linux
 
 #### 查杀tomcat进程
