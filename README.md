@@ -126,9 +126,9 @@ ps -ef |grep tomcat
 
 kill -9 5144
 
-#### Android Sdk Manager 打不开 JDK Version 大于 8 
+#### Android Sdk Manager 打不开（JDK Version 大于 8） 
 
-找到 $Sdk/bin/sdkmanager shell脚本，用文本编辑器打开
+找到：sdk-tools安装目录/bin/sdkmanager shell脚本，用文本编辑器打开
 
 搜索 DEFAULT_JVM_OPTS 关键字，找到类似脚本：
 
