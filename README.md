@@ -414,10 +414,10 @@ SELECT column_name FROM information_schema.columns WHERE TABLE_SCHEMA = (SELECT 
 	
 </update>
 
-<select id="selectBy">
-
-	SELECT * FROM ${table}
-
+    <select id="selectLstBy" resultType="com.alibaba.fastjson.JSONObject">
+    
+        SELECT * FROM ${table}
+	
         <where>
 	
             <foreach collection="fields" item="item" index="i">
@@ -436,7 +436,9 @@ SELECT column_name FROM information_schema.columns WHERE TABLE_SCHEMA = (SELECT 
 	    
         </where>
 	
-</select>
+    </select>
+    
+
 
 
 
