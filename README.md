@@ -414,7 +414,29 @@ SELECT column_name FROM information_schema.columns WHERE TABLE_SCHEMA = (SELECT 
 	
 </update>
 
+<select id="selectBy">
 
+	SELECT * FROM ${table}
+
+        <where>
+	
+            <foreach collection="fields" item="item" index="i">
+	    
+                <if test="0 != i%2">
+		
+                    <if test="null != fields[i-1]">
+		    
+                        AND ${fields[i-1]} = #{item}
+			
+                    </if>
+		    
+                </if>
+		
+            </foreach>
+	    
+        </where>
+	
+</select>
 
 
 
