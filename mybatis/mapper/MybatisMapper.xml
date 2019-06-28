@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.angke.appointment.mybatis.mapper.MybatisMapper">
+
+    <select id="selectColumns" resultType="string">
+        SELECT column_name FROM information_schema.columns WHERE TABLE_SCHEMA = (SELECT DATABASE()) AND TABLE_NAME = #{table}
+    </select>
+
+    <insert id="insertSelective">
+        insert into ${table}
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <foreach collection="map" index="key" item="value">
+                <if test="key != null and null != value">
+                    ${key},
+                </if>
+            </foreach>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <foreach collection="map" index="key" item="value">
+                <if test="key != null and null != value">
+                    #{value},
+                </if>
+            </foreach>
+        </trim>
+    </insert>
+
+    <update id="updateSelective">
+        update ${table}
+        <trim prefix="SET " suffixOverrides=",">
+            <foreach collection="map" index="key" item="value">
+                <if test="null != key and 'ID' != key">
+                    ${key}=#{value},
+                </if>
+            </foreach>
+        </trim>
+        WHERE ID = #{ID}
+    </update>
+
+    <select id="selectOneBy" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT * FROM ${table}
+        <where>
+            <foreach collection="fields" item="item" index="i">
+                <if test="0 != i%2">
+                    <if test="null != fields[i-1]">
+                        AND ${fields[i-1]} = #{item}
+                    </if>
+                </if>
+            </foreach>
+        </where>
+    </select>
+
+    <select id="selectLstBy" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT * FROM ${table}
+        <where>
+            <foreach collection="fields" item="item" index="i">
+                <if test="0 != i%2">
+                    <if test="null != fields[i-1]">
+                        AND ${fields[i-1]} = #{item}
+                    </if>
+                </if>
+            </foreach>
+        </where>
+    </select>
+</mapper>
