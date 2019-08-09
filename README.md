@@ -424,7 +424,7 @@ SELECT column_name FROM information_schema.columns WHERE TABLE_SCHEMA = (SELECT 
 	    
                 <if test="0 != i%2">
 		
-                    <if test="null != fields[i-1]">
+                    <if test="null != fields[i-1] and null != item">
 		    
                         AND ${fields[i-1]} = #{item}
 			
