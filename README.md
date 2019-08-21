@@ -339,6 +339,12 @@ SELECT table_name FROM information_schema.tables WHERE table_schema = 'schema_na
 
 SELECT column_name FROM information_schema.columns WHERE TABLE_SCHEMA = (SELECT DATABASE()) AND TABLE_NAME = #{table};
 
+#### 逗号分隔字符串拆分行数据
+
+SELECT SUBSTRING_INDEX(SUBSTRING_INDEX(a.字段, ',', help_topic_id + 1), ',', -1)
+FROM 表 a, mysql.help_topic b
+WHERE b.help_topic_id < LENGTH(a.字段) - LENGTH(REPLACE(a.字段, ',', '')) + 1
+
 
 
 
